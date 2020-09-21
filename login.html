@@ -56,7 +56,8 @@
 	cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
 			var accessToken = result.getAccessToken().getJwtToken();
-			console.log(accessToken);	
+      console.log(accessToken);	
+      location.href = "menu.html"
         },
 
         onFailure: function(err) {
