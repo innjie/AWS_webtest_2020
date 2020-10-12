@@ -9,8 +9,8 @@
 	<script src="js/amazon-cognito-auth.min.js"></script>
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
 	<script src="js/amazon-cognito-identity.min.js"></script>   
-	<script src="js/config.js"></script>
-
+  <script src="js/config.js"></script>
+  <script src="http://jsgetip.appspot.com"></script>
   </head>
   <body>
     <form>
@@ -29,7 +29,28 @@
 
 
 <script>
+  //get IP
+  $(document).ready(function() {
+    var check = ip();
+    var AllowIP = ["122.132.1.2", "122.36.107.46"];
+    var denyIp = ["192.*.*.*"];
+    var i = 0;
+    var flag = 0;
+    for(var  i in AllowIP) {
+      if(AllowIP[i] == check) {
+        flag = 1;
+      }
+    }
 
+    if(flag == 1) {
+      ;
+    } else { 
+      location.href="error.html";
+    }
+  
+    alert(check);
+  });
+  //sign in
   function signInButton() {
     
 	var authenticationData = {
